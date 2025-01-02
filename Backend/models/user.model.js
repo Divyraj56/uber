@@ -36,10 +36,12 @@ userSchema.methods.generateAuthToken = function(){
     return token;
 }
 
+//compare the argument password against the password
 userSchema.methods.comparePasswords = async function (password){
     return await bcrypt.compare(password,this.password);
 }
 
+//hash the password before saving it in the database
 userSchema.statics.hashPassword = async function(password){
     return await bcrypt.hash(password,10);
 }

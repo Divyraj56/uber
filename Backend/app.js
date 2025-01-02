@@ -18,6 +18,8 @@ app.get('/',(req,res)=>{
     res.send('Hello World');
 })
 
+//This connects /users URLs to the logic defined in user.routes,
+// enabling user-related request handling like /users/login or /users/register.
 app.use('/users',userRoutes);
 
 
